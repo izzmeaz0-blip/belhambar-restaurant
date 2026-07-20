@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>القائمة | Menu - Belhambar</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="logo">Belhambar بلحنبار</div>
+  <ul>
+    <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+    <li><a href="menu.html" class="active" data-ar="القائمة" data-en="Menu">القائمة</a></li>
+    <li><a href="contact.html" data-ar="التواصل والحجز" data-en="Contact & Reservation">التواصل والحجز</a></li>
+  </ul>
+  <button class="lang-btn" onclick="toggleLang()">EN</button>
+</nav>
+
+<div class="page-header">
+  <h1 data-ar="قائمتنا المميزة" data-en="Our Signature Menu">قائمتنا المميزة</h1>
+</div>
+
+<section>
+  <div class="dishes">
+    <div class="dish">
+      <div class="icon">🍚</div>
+      <h3 data-ar="مجبوس دجاج" data-en="Chicken Majboos">مجبوس دجاج</h3>
+      <p data-ar="دجاج مطهو ببطء فوق أرز بسمتي بنكهة الزعفران." data-en="Slow-cooked chicken over saffron basmati rice.">دجاج مطهو ببطء فوق أرز بسمتي بنكهة الزعفران.</p>
+      <div class="price">95 ر.ق</div>
+    </div>
+    <div class="dish">
+      <div class="icon">🍖</div>
+      <h3 data-ar="مجبوس لحم بلحنبار" data-en="Belhambar Lamb Majboos">مجبوس لحم بلحنبار</h3>
+      <p data-ar="كتف حمل أسترالي مع الليمون الأسود والقرفة." data-en="Australian lamb shoulder, dried lime, cinnamon.">كتف حمل أسترالي مع الليمون الأسود والقرفة.</p>
+      <div class="price">145 ر.ق</div>
+    </div>
+    <div class="dish">
+      <div class="icon">🐟</div>
+      <h3 data-ar="مجبوس هامور" data-en="Hammour Machboos">مجبوس هامور</h3>
+      <p data-ar="هامور طازج من الخليج مع الطماطم وأرز الزعفران." data-en="Fresh Gulf hammour, tomato, saffron rice.">هامور طازج من الخليج مع الطماطم وأرز الزعفران.</p>
+      <div class="price">165 ر.ق</div>
+    </div>
+    <div class="dish">
+      <div class="icon">☕</div>
+      <h3 data-ar="قهوة عربية" data-en="Arabic Coffee">قهوة عربية</h3>
+      <p data-ar="محمصة طازجة مع التمر." data-en="Freshly roasted, served with dates.">محمصة طازجة مع التمر.</p>
+      <div class="price">15 ر.ق</div>
+    </div>
+    <div class="dish">
+      <div class="icon">🍰</div>
+      <h3 data-ar="أم علي" data-en="Om Ali">أم علي</h3>
+      <p data-ar="حلوى شرقية دافئة بالمكسرات والقشطة." data-en="Warm oriental dessert with nuts and cream.">حلوى شرقية دافئة بالمكسرات والقشطة.</p>
+      <div class="price">28 ر.ق</div>
+    </div>
+    <div class="dish">
+      <div class="icon">🥤</div>
+      <h3 data-ar="عصير مانجو طازج" data-en="Fresh Mango Juice">عصير مانجو طازج</h3>
+      <p data-ar="عصير طبيعي 100٪ بدون إضافات." data-en="100% natural, no additives.">عصير طبيعي 100٪ بدون إضافات.</p>
+      <div class="price">18 ر.ق</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h3 data-ar="بلحنبار" data-en="Belhambar">بلحنبار</h3>
+  <p data-ar="ميناء الشيوخ، كورنيش الدوحة، قطر" data-en="Al Shoyoukh Port, Doha, Qatar">ميناء الشيوخ، كورنيش الدوحة، قطر</p>
+  <p class="credit" data-ar="نموذج تصميم — تم بناؤه بواسطة <strong>عزالدين معاذ عمر مالك</strong>" data-en="Design concept — built by <strong>Ezzeldin Moaz Omar Malek</strong>">نموذج تصميم — تم بناؤه بواسطة <strong>عزالدين معاذ عمر مالك</strong></p>
+</footer>
+
+<script>
+let currentLang='ar';
+function toggleLang(){
+  currentLang = currentLang==='ar' ? 'en' : 'ar';
+  const html=document.getElementById('htmlRoot');
+  html.setAttribute('lang',currentLang);
+  html.setAttribute('dir', currentLang==='ar'?'rtl':'ltr');
+  document.querySelector('.lang-btn').textContent = currentLang==='ar'?'EN':'AR';
+  document.querySelectorAll('[data-ar]').forEach(el=>{
+    el.innerHTML = el.getAttribute('data-'+currentLang);
+  });
+}
+</script>
+</body>
+</html>
