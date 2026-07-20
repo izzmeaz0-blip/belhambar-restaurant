@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>التواصل والحجز | Contact - Belhambar</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="logo">Belhambar بلحنبار</div>
+  <ul>
+    <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+    <li><a href="menu.html" data-ar="القائمة" data-en="Menu">القائمة</a></li>
+    <li><a href="contact.html" class="active" data-ar="التواصل والحجز" data-en="Contact & Reservation">التواصل والحجز</a></li>
+  </ul>
+  <button class="lang-btn" onclick="toggleLang()">EN</button>
+</nav>
+
+<div class="page-header">
+  <h1 data-ar="تواصل معنا واحجز طاولتك" data-en="Contact Us & Reserve">تواصل معنا واحجز طاولتك</h1>
+</div>
+
+<section>
+  <div class="contact-info">
+    <div>
+      <div class="icon">📍</div>
+      <h3 data-ar="الموقع" data-en="Location">الموقع</h3>
+      <p data-ar="ميناء الشيوخ، كورنيش الدوحة، قطر" data-en="Al Shoyoukh Port, Corniche Road, Doha">ميناء الشيوخ، كورنيش الدوحة، قطر</p>
+    </div>
+    <div>
+      <div class="icon">📞</div>
+      <h3 data-ar="الهاتف" data-en="Phone">الهاتف</h3>
+      <p data-ar="XXX XXXX 974+" data-en="+974 XXXX XXX">XXX XXXX 974+</p>
+    </div>
+    <div>
+      <div class="icon">🕐</div>
+      <h3 data-ar="ساعات العمل" data-en="Hours">ساعات العمل</h3>
+      <p data-ar="يوميًا 08:00 صباحًا – 12:00 منتصف الليل" data-en="Daily · 08:00 AM – 12:00 AM">يوميًا 08:00 صباحًا – 12:00 منتصف الليل</p>
+    </div>
+    <div>
+      <div class="icon">✉️</div>
+      <h3 data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h3>
+      <p data-ar="info@example.com" data-en="info@example.com">info@example.com</p>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:50px;">
+    <p style="color:#6b7a7c; max-width:500px; margin:0 auto 20px;" data-ar="هذا نموذج تصميم تجريبي — نموذج الحجز الفعلي يُضاف عند التنفيذ الحقيقي للمشروع." data-en="This is a design demo — a real booking form would be added in actual project deployment.">هذا نموذج تصميم تجريبي — نموذج الحجز الفعلي يُضاف عند التنفيذ الحقيقي للمشروع.</p>
+  </div>
+</section>
+
+<footer>
+  <h3 data-ar="بلحنبار" data-en="Belhambar">بلحنبار</h3>
+  <p data-ar="ميناء الشيوخ، كورنيش الدوحة، قطر" data-en="Al Shoyoukh Port, Doha, Qatar">ميناء الشيوخ، كورنيش الدوحة، قطر</p>
+  <p class="credit" data-ar="نموذج تصميم — تم بناؤه بواسطة <strong>عزالدين معاذ عمر مالك</strong>" data-en="Design concept — built by <strong>Ezzeldin Moaz Omar Malek</strong>">نموذج تصميم — تم بناؤه بواسطة <strong>عزالدين معاذ عمر مالك</strong></p>
+</footer>
+
+<script>
+let currentLang='ar';
+function toggleLang(){
+  currentLang = currentLang==='ar' ? 'en' : 'ar';
+  const html=document.getElementById('htmlRoot');
+  html.setAttribute('lang',currentLang);
+  html.setAttribute('dir', currentLang==='ar'?'rtl':'ltr');
+  document.querySelector('.lang-btn').textContent = currentLang==='ar'?'EN':'AR';
+  document.querySelectorAll('[data-ar]').forEach(el=>{
+    el.innerHTML = el.getAttribute('data-'+currentLang);
+  });
+}
+</script>
+</body>
+  </html>
