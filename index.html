@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بلحنبار | Belhambar - Doha Corniche</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="logo">Belhambar بلحنبار</div>
+  <ul>
+    <li><a href="index.html" class="active" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+    <li><a href="menu.html" data-ar="القائمة" data-en="Menu">القائمة</a></li>
+    <li><a href="contact.html" data-ar="التواصل والحجز" data-en="Contact & Reservation">التواصل والحجز</a></li>
+  </ul>
+  <button class="lang-btn" onclick="toggleLang()">EN</button>
+</nav>
+
+<header class="hero">
+  <span class="badge" data-ar="🌊 نموذج تصميم تجريبي" data-en="🌊 Design Concept">🌊 نموذج تصميم تجريبي</span>
+  <h1 data-ar="نكهة الضيافة القطرية" data-en="A Taste of Qatari Hospitality">نكهة الضيافة القطرية</h1>
+  <p data-ar="حيث تلتقي التقاليد الأصيلة بالتراث البحري على كورنيش الدوحة." data-en="Where authentic culinary traditions and maritime heritage meet on the Doha Corniche.">حيث تلتقي التقاليد الأصيلة بالتراث البحري على كورنيش الدوحة.</p>
+  <a class="cta" href="menu.html" data-ar="استعرض القائمة" data-en="View Our Menu">استعرض القائمة</a>
+</header>
+
+<section class="heritage">
+  <h2 data-ar="من نبض البحر" data-en="A Name From The Tide">من نبض البحر</h2>
+  <p data-ar="'بلحنبار' كلمة من البحر — لحظة ارتفاع مد الخليج، حين تعود السفن محمّلة باللؤلؤ. مطبخنا يحافظ على وصفات البيوت القطرية بلمسة عصرية راقية." data-en="'Belhambar' is a word from the sea — the moment the Gulf swells to its highest. Our kitchen preserves the recipes of Qatari homes with a modern touch.">'بلحنبار' كلمة من البحر — لحظة ارتفاع مد الخليج، حين تعود السفن محمّلة باللؤلؤ. مطبخنا يحافظ على وصفات البيوت القطرية بلمسة عصرية راقية.</p>
+
+  <div class="features">
+    <div class="feature">
+      <div class="icon">🐚</div>
+      <h3 data-ar="جذور ساحلية" data-en="Coastal Roots">جذور ساحلية</h3>
+      <p data-ar="وصفات مستوحاة من عائلات الصيد القطرية." data-en="Recipes drawn from Qatari fishing families.">وصفات مستوحاة من عائلات الصيد القطرية.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🌅</div>
+      <h3 data-ar="إطلالة بحرية" data-en="Waterfront Setting">إطلالة بحرية</h3>
+      <p data-ar="تراس بانورامي يطل على الخليج العربي." data-en="A panoramic terrace overlooking the Gulf.">تراس بانورامي يطل على الخليج العربي.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🏺</div>
+      <h3 data-ar="مجلس عصري" data-en="Modern Majlis">مجلس عصري</h3>
+      <p data-ar="دفء تقليدي بحلة عصرية للتجمعات الخاصة." data-en="Traditional warmth for private gatherings.">دفء تقليدي بحلة عصرية للتجمعات الخاصة.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h3 data-ar="بلحنبار" data-en="Belhambar">بلحنبار</h3>
+  <p data-ar="ميناء الشيوخ، كورنيش الدوحة، قطر" data-en="Al Shoyoukh Port, Doha, Qatar">ميناء الشيوخ، كورنيش الدوحة، قطر</p>
+  <p class="credit" data-ar="نموذج تصميم — تم بناؤه بواسطة <strong>عزالدين معاذ عمر مالك</strong>" data-en="Design concept — built by <strong>Ezzeldin Moaz Omar Malek</strong>">نموذج تصميم — تم بناؤه بواسطة <strong>عزالدين معاذ عمر مالك</strong></p>
+</footer>
+
+<script>
+let currentLang='ar';
+function toggleLang(){
+  currentLang = currentLang==='ar' ? 'en' : 'ar';
+  const html=document.getElementById('htmlRoot');
+  html.setAttribute('lang',currentLang);
+  html.setAttribute('dir', currentLang==='ar'?'rtl':'ltr');
+  document.querySelector('.lang-btn').textContent = currentLang==='ar'?'EN':'AR';
+  document.querySelectorAll('[data-ar]').forEach(el=>{
+    el.innerHTML = el.getAttribute('data-'+currentLang);
+  });
+}
+</script>
+</body>
+        </html>
